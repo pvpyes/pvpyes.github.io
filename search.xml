@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[whoai]]></title>
-    <url>%2F2018%2F11%2F19%2Fwhoai%2F</url>
-    <content type="text"><![CDATA[把文章添加标签只需在文章的顶部标题下方添加tags字段，即可自动创建标签名并归入对应的标签中]]></content>
-      <categories>
-        <category>思想</category>
-      </categories>
-      <tags>
-        <tag>思想</tag>
-      </tags>
+    <title><![CDATA[Centos7服务器源的问题]]></title>
+    <url>%2F2018%2F11%2F30%2FCentos7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%BA%90%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Centos7配置yum源的奇葩问题其实配置yum源很简单，按照操作一步一步来，最多5分钟，但是今天我遇到了一个奇葩问题，折腾了我一上午时间。。。。。。。。 废话不多说，先讲一下配置网络源的步骤修改CentOS默认yum源为mirrors.163.com1.进入yum源配置文件所在的文件夹1[root@localhost~]# cd /etc/yum.repos.d/ 2.下载163的yum源配置文件到yum.repos.d文件内，根据自己版本选择Centos71[root@localhost yum.repos.d]# wget http://mirrors.163.com/.help/CentOS7-Base-163.repo Centos61[root@localhost yum.repos.d]# wget http://mirrors.163.com/.help/CentOS6-Base-163.repo Centos51[root@localhost yum.repos.d]# wget http://mirrors.163.com/.help/CentOS5-Base-163.repo 3.运行yum makecache生成缓存1[root@localhost yum.repos.d]# yum makecache 4.开始更新系统，并会出现以下内容123456[root@localhost yum.repos.d]# yum -y update已加载插件：fastestmirror, refresh-packagekit, security设置更新进程Loading mirror speeds from cached hostfile* base: mirrors.163.com* extras: mirrors.163.com* updates: mirrors.163.com 修改Centos默认yum源为mirrors.aliyun.com1.进入yum源配置文件所在的文件夹1[root@localhost~]# cd /etc/yum.repos.d/ 2.下载aliyun的yum源配置文件到/etc/yum.repos.d/ 根据版本自己选择Centos71[root@localhost ~]# wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo Centos61[root@localhost ~]# wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo Centos51[root@localhost ~]# wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo 3.运行yum makcache生成缓存1[root@localhost ~]# yum makecache 4.这时候再更新系统就会看到以下信息123456[root@localhost ~]# yum -y update已加载插件：fastestmirror, refresh-packagekit, security设置更新进程Loading mirror speeds from cached hostfile* base: mirrors.aliyun.com* extras: mirrors.aliyun.com* updates: mirrors.aliyun.com 操作其实很简单，只要命令不输错 我也是按照这个步骤来的，但是我脸比较黑。。。。。。直接出错 12345Loaded plugins:fastestmirror,langpacksFile contains no section headers.file:file://etc/yum.repos.d/CentOS-Base-163.repo,line：1’&lt;HTML&gt;&lt;meta http-equiv=Content-Type content=text/html;charset=utf-8&apos;&apos;&gt;\r\n&apos; 我在谷歌查过很多资料，也看了别人的技术文章，有删除yum.repos.d下所有文件的,重新下载的1http://xiaojingjing.iteye.com/blog/2393165 参考文档 还有用浏览器下载然后上传的1https://blog.csdn.net/sj349781478/article/details/78736873 参考文档 最后的原因竟然是出口有限制，用手机做热点就行了，问题就解决了。。。。。。。。还有感谢几位老哥的参考文档]]></content>
   </entry>
   <entry>
     <title><![CDATA[从0到1的过程是困苦的也是幸福的]]></title>
